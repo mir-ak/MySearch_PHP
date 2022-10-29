@@ -1,0 +1,131 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+
+
+<head>
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+<META NAME="copyright" content="1998 by Jean-Francois Pillou">
+<META NAME="ROBOTS" content="all">
+<META NAME="author" content="Jean-Francois Pillou">
+<META NAME="subject" content="L'assembleur">
+<META NAME="topic" content="Assembleur">
+<META NAME="keywords" content="&eacute;crire le programme en assembleur, assembleur, langage, langage, enregistrer le fichier source">
+<META NAME="description" content="Ce document intitule L'assembleur - Fichier source et compilation,  issu de l'encyclopedie informatique Comment Ca Marche">
+<META NAME="title" content="L'assembleur - Fichier source et compilation">
+<title>Ecrire un programme en assembleur</title>
+<link rel="stylesheet" href="../ccm.css" type="text/css">
+
+
+<link rel="alternate" type="application/rss+xml" title="CCM: Actualit&eacute; informatique" href="http://www.commentcamarche.net/rss/actualite.php3">
+<link rel="alternate" type="application/rss+xml" title="CCM: Actualit&eacute;s du site CommentCaMarche.net" href="http://www.commentcamarche.net/rss/rss.php3">
+</head>
+
+
+<body>
+
+<table class="ccmmain">
+<tr>
+<td height="1" width="170"><img src="../images/pixel_transparent.gif" height="1" width="100%" alt=""></td>
+<td height="1" width="540"><img src="../images/pixel_transparent.gif" height="1" width="100%" alt=""></td>
+<td height="1" width="12"><img src="../images/pixel_transparent.gif" height="1" width="100%" alt=""></td>
+<td height="1" width="10"><img src="../images/pixel_transparent.gif" height="1" width="100%" alt=""></td>
+</tr>
+
+<tr>
+<td colspan="2" bgcolor="#AEBFE2" style="vertical-align:top;text-align:left;height:46;background-color:#AEBFE2;">
+<table border="0" cellspacing="0" cellpadding="0">
+    <tr>
+    <td style="vertical-align:top;"><a href="../index.htm" target="_top"><img src="../images/logotop.png" border="0" width="328" height="42" title="Comment Ca Marche - Communaut&eacute; informatique" alt="Comment Ca Marche - Communaut&eacute; informatique"></a></td>
+    <td style="width:30px">&nbsp;</td>
+    <td style="vertical-align:middle;text-align:left"></td></tr>
+</table>
+</td>
+<td style="background-color: #AEBFE2; vertical-align:bottom;">&nbsp;</td>
+<td style="background-color: #AEBFE2;">&nbsp;</td>
+</tr>
+
+<tr>
+<td bgcolor="#8EA6D6"><div id="ccmicons"><a href="../index.htm"  ><img src="../images/icohome2.gif" name="icohome" alt="Accueil - Encyclop&eacute;die informatique" title="Accueil - Encyclop&eacute;die informatique" width="24" border="0"></a><a href="http://www.commentcamarche.net/encyclopedie"  ><img src="../images/icozip2.gif" name="icozip" alt="T&eacute;l&eacute;charger l'encyclop&eacute;die" title="T&eacute;l&eacute;charger l'encyclop&eacute;die" width="24" border="0"></a><a href="http://www.commentcamarche.net/ccmbugs/?Bug_url=%2Fasm%2Fsource.php3#ecrire"  ><img src="../images/icowri2.gif" name="icowri" alt="Contribuer &agrave; cet article" width="24" border="0"></a><a href="http://www.commentcamarche.net/contact/"  ><img src="../images/icomail2.gif" name="icomail" alt="" title="Ecrire &agrave; Jean-Francois Pillou" width="24"  border="0"></a></div></td>
+<td colspan="3" bgcolor="#8EA6D6"></td>
+</tr>
+
+<tr>
+<td height="1"><img src="../images/pixel_white.png" height="1" width="100%" alt=""></td>
+<td height="1"><img src="../images/pixel_white.png" height="1" width="100%" alt=""></td>
+<td height="1" rowspan="2"><img src="../images/pixel_white.png" height="1" width="12" alt=""></td>
+
+<td bgcolor="#FFFFFF" height="100%" valign="top" rowspan="2">
+</td>
+</tr>
+
+<tr><td valign="top" colspan="3"><div id="contenu"><h1> L'assembleur - Fichier source et compilation</h1><table border="0" cellpadding="0" cellspacing="0" width="722">
+	<tr>
+		<td><img src="images/source.gif" alt="Ecrire un programme en assembleur"></td>
+		<td valign="top" width="38"><a href="assembleur.htm"><img src="../images/bckward.gif" border="0" width="38" height="63" alt=""></a></td>
+		<td valign="top" width="38"><a href="instruction.htm"><img src="../images/forward.gif" border="0" width="38" height="63" alt=""></a></td>		<td valign="top" width="63"><a href="../index.htm"><img src="../images/logoPClw.gif" alt="Encyclopedie" height="60" width="63" border="0"></a></td>
+		</tr>
+</table>
+<br><div id="CCMmenu">
+<table width="156">
+<tr><th>Assembleur</th></tr>
+<tr><td><a class="mlink" href="assembleur.htm" >Assembleur</a></td></tr>
+<tr><td><a class="mlink" href="source.htm" >Compilation</a></td></tr>
+<tr><td><a class="mlink" href="instruction.htm" >Instructions</a></td></tr>
+<tr><td><a class="mlink" href="adressage.htm" >Adressage</a></td></tr>
+<tr><td><a class="mlink" href="logique.htm" >Instructions arithm&eacute;tiques et logiques</a></td></tr>
+<tr><td><a class="mlink" href="affectation.htm" >Affectation</a></td></tr>
+<tr><td><a class="mlink" href="saut.htm" >Branchements</a></td></tr>
+<tr><td><a class="mlink" href="pile.htm" >Pile</a></td></tr>
+<tr><td><a class="mlink" href="procedure.htm" >Proc&eacute;dures</a></td></tr>
+<tr><td><a class="mlink" href="segmentation.htm" >Segmentation de la m&eacute;moire</a></td></tr>
+<tr><td><a class="mlink" href="liste.htm" >Liste des principales instructions</a></td></tr>
+<tr><th><span class="rouge">A lire aussi</span></th></tr>
+<tr><td><a class="mlink" href="http://www.commentcamarche.net/faq/1-langages">FAQ langages</a></td></tr>
+<tr><td><a class="mlink" href="http://www.commentcamarche.net/faq/2-programmation">FAQ programmation</a></td></tr>
+</table></div>
+<hr>
+
+<a name="compilation" class="ancre"></a><h2>La compilation du programme</h2>
+
+<p align="justify">Le programme doit &ecirc;tre saisi dans un fichier texte non format&eacute; (c'est-&agrave;-dire sans caract&egrave;res en gras, soulign&eacute;, avec
+des polices de caract&egrave;res de diff&eacute;rentes tailles, ...) appel&eacute; fichier source. En effet, l'assembleur
+(le programme permettant de faire la traduction du langage assembleur en langage machine) permet uniquement
+de cr&eacute;er un fichier assembl&eacute; &agrave; partir du fichier source (il devra comporter l'extension .ASM, en s'appelant par exemple <i>source.asm</i>
+
+ou n'importe quel autre nom suivi de l'extension .asm).
+
+<p align="justify">L'assembleur va fournir un <i>fichier objet</i> (dont l'extension est .obj) qui va contenir l'ensemble des instructions traduites
+en instructions machines. Ce fichier .OBJ ne pourra toutefois pas s'ex&eacute;cuter directement car il faut encore lier les diff&eacute;rents fichiers.
+
+<br/>Comment &ccedil;a les diff&eacute;rents fichiers ?
+
+<br/>En effet il est possible de construire un ex&eacute;cutable &agrave; partir de plusieurs fichiers sources (&agrave; partir d'un
+certain niveau de programmation il devient int&eacute;ressant de cr&eacute;er des fichiers contenant des fonctions...). Ainsi, m&ecirc;me si
+vous avez un seul fichier objet il vous faudra utiliser un programme (appel&eacute; <i>&eacute;diteur de liens</i>) qui va vous permettre
+de cr&eacute;er un fichier ex&eacute;cutable (dont l'extension sera &laquo;&nbsp;<i>.exe</i>&nbsp;&raquo;).
+
+<p align="justify">
+<table border="0">
+<tr>
+<td>
+
+<img src="../images/warning.gif"></td>
+<td>
+
+<b>Note d'un visiteur</b>&nbsp;:
+
+<p align="justify">Les fichiers de sortie ne sont pas obligatoirement des
+fichiers object, ni m&ecirc;me un ex&eacute;cutable !
+
+<br/>Il est en effet possible de g&eacute;n&eacute;rer un fichier binaire ne comportant
+que la traduction exacte du fichier source.
+Ce fichier binaire pourra par exemple &ecirc;tre utilis&eacute; comme programme
+d'amor&ccedil;age (boot) d'un ordinateur lorsqu'il sera plac&eacute; sur le
+
+<a href="../pc/disque.htm">secteur d'amor&ccedil;age</a> (<i>MBR</i>) d'une disquette
+ou d'un <a href="../pc/disque.htm">disque dur</a>. </td>
+</tr>
+</table>
+
+</body>
+</html>
