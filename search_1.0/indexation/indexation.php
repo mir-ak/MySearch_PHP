@@ -233,10 +233,10 @@ function get_array_separator_words($path_file_empty_words){
 
 function main(){
     # path de fichier des mots vides 
-    $path_file_empty_words = '../data_configuration/empty_words.txt';
+    $path_file_empty_words = '../../data_configuration/empty_words.txt';
 
     # path de fichier de séparateur
-    $path_file_separator_word = "../data_configuration/sep.txt";
+    $path_file_separator_word = "../../data_configuration/sep.txt";
 
     
     # lire la liste des mots vides 
