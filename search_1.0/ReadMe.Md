@@ -8,4 +8,4 @@
   * Calcule des occurrences de chaque élément de la liste obtenu.
   
 > Démonstration :
-![Alt Text](https://github.com/mir-ak/MySearch_PHP/demo/demo_v1.0.gif)
+![Alt Text]([https://github.com/mir-ak/MySearch_PHP/demo/demo_v1.0.gif](https://github.com/mir-ak/MySearch_PHP/blob/master/demo/demo_v1.0.gif))
