@@ -1,4 +1,4 @@
-#version 1.0
+# Version 1.0
 
 # 1 Extraire les différentes données d'un document HTML:
   * Récupération des meta de la source Web : keywords et description.
