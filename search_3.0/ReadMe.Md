@@ -1,6 +1,6 @@
 # Version 3.0
 
-# 1 afficher les resultats de recherche
+# 1 afficher les resultats de recherche pour les fichier html & txt
 
 > page fronEnd :
 
