@@ -305,29 +305,6 @@ function get_array_separator_words($path_file_empty_words)
     return file_get_contents($path_file_empty_words);
 }
 
-// function main($conn)
-// {
-//     # path de fichier des mots vides 
-//     $path_file_empty_words = '../../data_configuration/empty_words.txt';
-
-//     # path de fichier de séparateur
-//     $path_file_separator_word = "../../data_configuration/sep.txt";
-
-
-//     # lire la liste des mots vides 
-//     $array_empty_words = get_array_empty_words($path_file_empty_words);
-
-//     # lire le fichier de séparateur 
-//     $separator = get_array_separator_words($path_file_separator_word);
-
-//     $HTML_FILES = index_multiple_files('../../Files', $array_empty_words, $separator);
-
-//     debug_to_console($HTML_FILES);
-//     //save_htmlfile_in_database($conn, $HTML_FILES);
-// }
-
-//main(null);
-
 function main($conn)
 {
     # path de fichier des mots vides 
