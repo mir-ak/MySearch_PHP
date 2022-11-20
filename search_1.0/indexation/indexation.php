@@ -66,7 +66,7 @@ function index_one_html_file($html_file_path,$array_empty_words,$separator){
     $word = strtolower($word);
     
     # tokéniser le fichier html
-    $token = explode_html_file($html_file_path, $word, $separator, $array_empty_words);
+    $token = explode_html_file($html_file_path, utf8_decode($word), $separator, $array_empty_words);
     return convert_array_to_doc(
         get_title($word),
         $html_file_path, 
@@ -233,10 +233,10 @@ function get_array_separator_words($path_file_empty_words){
 
 function main(){
     # path de fichier des mots vides 
-    $path_file_empty_words = '../../data_configuration/empty_words.txt';
+    $path_file_empty_words = '../data_configuration/empty_words.txt';
 
     # path de fichier de séparateur
-    $path_file_separator_word = "../../data_configuration/sep.txt";
+    $path_file_separator_word = "../data_configuration/sep.txt";
 
     
     # lire la liste des mots vides 
@@ -245,9 +245,8 @@ function main(){
     # lire le fichier de séparateur 
     $separator = get_array_separator_words($path_file_separator_word);
         
-    $documents = index_multiple_html_files('../../FilesHtml',$array_empty_words,$separator);
+    $documents = index_multiple_html_files('../FilesHtml',$array_empty_words,$separator);
     debug_to_console($documents);
 }
 
 main();
-?>
