@@ -1,5 +1,4 @@
 <?php
-//require('../database/saveData_in_dataBase.php');
 
 $removeAccents = [
     ["&agrave;", "&acirc;", "&eacute;", "&egrave;", "&ecirc;", "&icirc;", "&iuml;", "&oelig;", "&ugrave;", "&ucirc;", "&ccedil;", "&Agrave;", "&Acirc;", "&Eacute;", "&Egrave;", "&Ecirc;", "&Icirc;", "&Iuml;", "&OElig;", "&Ugrave;", "&Ucirc;", "&Ccedil;"], ["à", "â", "é", "è", "ê", "î", "ï", "œ", "ù", "û", "ç", "À", "Â", "È", "É", "Ê", "Î", "Ï", "Œ", "Ù", "Û", "Ç",]

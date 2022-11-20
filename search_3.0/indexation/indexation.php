@@ -1,6 +1,4 @@
 <?php
-//require('../database/saveData_in_dataBase.php');
-
 
 function debug_to_console($data, $context = 'Debug in Console')
 {
