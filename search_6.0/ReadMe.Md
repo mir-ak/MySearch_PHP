@@ -4,4 +4,5 @@
 
 > démonstration coté admin :
 
-> ![Alt Text](https://github.com/mir-ak/MySearch_PHP/blob/master/Demo_v6_admin.mp4)
+> https://user-images.githubusercontent.com/58698019/204140506-d4ac9acf-960b-4de8-9388-6f756a458e1c.mp4
+
