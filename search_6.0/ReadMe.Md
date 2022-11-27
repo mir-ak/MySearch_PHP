@@ -4,4 +4,4 @@
 
 > démonstration coté admin :
 
-> ![Alt Text](https://github.com/mir-ak/MySearch_PHP/blob/master/demo/Demo_v6_admin.mp4)
+> <video src='https://github.com/mir-ak/MySearch_PHP/blob/master/demo/Demo_v6_admin.mp4' width=180></video>
