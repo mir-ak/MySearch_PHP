@@ -1,0 +1,246 @@
+#logo {
+  width: 30%;
+  margin: 0 auto;
+  text-align: center;
+}
+
+#container {
+  float: left;
+  margin-top: 1%;
+  border: 1px solid #c4c4c4;
+  border-radius: 25px;
+  padding: 20px 10px 10px 10px;
+  background-color: #d9dadb;
+  width: 20%;
+  height: 76vh;
+  overflow: auto;
+}
+#selected_file {
+  width: 500px;
+  margin: 2px auto;
+  font-size: 15px;
+  font-family: sans-serif;
+}
+UL.filetree {
+  font-family: Verdana, sans-serif;
+  font-size: 14px;
+  line-height: 33px;
+  padding: 0px;
+  margin: 0px;
+}
+UL.filetree LI {
+  list-style: none;
+  padding: 0px 0px 0px 20px;
+  margin: 0px 0px 0px 10px;
+  white-space: nowrap;
+}
+UL.filetree A {
+  color: #333;
+  text-decoration: none;
+  display: block;
+  padding: 0px 2px 0px 5px;
+  margin-left: 15px;
+}
+UL.filetree A:hover {
+  background: #bdf;
+}
+/*folder styles*/
+.filetree LI.folder {
+  background: url(icons/folder.png) no-repeat left top;
+}
+.filetree LI.expanded {
+  background: url(icons/folder_open.png) no-repeat left top;
+}
+.filetree LI.file {
+  background: url(icons/file.png) no-repeat left top;
+}
+.filetree LI.wait {
+  background: url(icons/spinner.gif) no-repeat left top;
+}
+/*extensions and mime types*/
+.filetree LI.ext_3gp {
+  background: url(icons/film.png) no-repeat left top;
+}
+.filetree LI.ext_afp {
+  background: url(icons/code.png) no-repeat left top;
+}
+.filetree LI.ext_afpa {
+  background: url(icons/code.png) no-repeat left top;
+}
+.filetree LI.ext_asp {
+  background: url(icons/code.png) no-repeat left top;
+}
+.filetree LI.ext_aspx {
+  background: url(icons/code.png) no-repeat left top;
+}
+.filetree LI.ext_avi {
+  background: url(icons/film.png) no-repeat left top;
+}
+.filetree LI.ext_bat {
+  background: url(icons/application.png) no-repeat left top;
+}
+.filetree LI.ext_bmp {
+  background: url(icons/picture.png) no-repeat left top;
+}
+.filetree LI.ext_c {
+  background: url(icons/code.png) no-repeat left top;
+}
+.filetree LI.ext_cfm {
+  background: url(icons/code.png) no-repeat left top;
+}
+.filetree LI.ext_cgi {
+  background: url(icons/code.png) no-repeat left top;
+}
+.filetree LI.ext_com {
+  background: url(icons/application.png) no-repeat left top;
+}
+.filetree LI.ext_cpp {
+  background: url(icons/code.png) no-repeat left top;
+}
+.filetree LI.ext_css {
+  background: url(icons/css.png) no-repeat left top;
+}
+.filetree LI.ext_doc {
+  background: url(icons/doc.png) no-repeat left top;
+}
+.filetree LI.ext_exe {
+  background: url(icons/application.png) no-repeat left top;
+}
+.filetree LI.ext_gif {
+  background: url(icons/picture.png) no-repeat left top;
+}
+.filetree LI.ext_fla {
+  background: url(icons/flash.png) no-repeat left top;
+}
+.filetree LI.ext_h {
+  background: url(icons/code.png) no-repeat left top;
+}
+.filetree LI.ext_htm {
+  background: url(icons/html.png) no-repeat left top;
+}
+.filetree LI.ext_html {
+  background: url(icons/html.png) no-repeat left top;
+}
+.filetree LI.ext_jar {
+  background: url(icons/java.png) no-repeat left top;
+}
+.filetree LI.ext_jpg {
+  background: url(icons/picture.png) no-repeat left top;
+}
+.filetree LI.ext_jpeg {
+  background: url(icons/picture.png) no-repeat left top;
+}
+.filetree LI.ext_js {
+  background: url(icons/script.png) no-repeat left top;
+}
+.filetree LI.ext_lasso {
+  background: url(icons/code.png) no-repeat left top;
+}
+.filetree LI.ext_log {
+  background: url(icons/txt.png) no-repeat left top;
+}
+.filetree LI.ext_m4p {
+  background: url(icons/music.png) no-repeat left top;
+}
+.filetree LI.ext_mov {
+  background: url(icons/film.png) no-repeat left top;
+}
+.filetree LI.ext_mp3 {
+  background: url(icons/music.png) no-repeat left top;
+}
+.filetree LI.ext_mp4 {
+  background: url(icons/film.png) no-repeat left top;
+}
+.filetree LI.ext_mpg {
+  background: url(icons/film.png) no-repeat left top;
+}
+.filetree LI.ext_mpeg {
+  background: url(icons/film.png) no-repeat left top;
+}
+.filetree LI.ext_ogg {
+  background: url(icons/music.png) no-repeat left top;
+}
+.filetree LI.ext_pcx {
+  background: url(icons/picture.png) no-repeat left top;
+}
+.filetree LI.ext_pdf {
+  background: url(icons/pdf.png) no-repeat left top;
+}
+.filetree LI.ext_php {
+  background: url(icons/php.png) no-repeat left top;
+}
+.filetree LI.ext_png {
+  background: url(icons/picture.png) no-repeat left top;
+}
+.filetree LI.ext_ppt {
+  background: url(icons/ppt.png) no-repeat left top;
+}
+.filetree LI.ext_psd {
+  background: url(icons/psd.png) no-repeat left top;
+}
+.filetree LI.ext_pl {
+  background: url(icons/script.png) no-repeat left top;
+}
+.filetree LI.ext_py {
+  background: url(icons/script.png) no-repeat left top;
+}
+.filetree LI.ext_rb {
+  background: url(icons/ruby.png) no-repeat left top;
+}
+.filetree LI.ext_rbx {
+  background: url(icons/ruby.png) no-repeat left top;
+}
+.filetree LI.ext_rhtml {
+  background: url(icons/ruby.png) no-repeat left top;
+}
+.filetree LI.ext_rpm {
+  background: url(icons/linux.png) no-repeat left top;
+}
+.filetree LI.ext_ruby {
+  background: url(icons/ruby.png) no-repeat left top;
+}
+.filetree LI.ext_sql {
+  background: url(icons/db.png) no-repeat left top;
+}
+.filetree LI.ext_swf {
+  background: url(icons/flash.png) no-repeat left top;
+}
+.filetree LI.ext_tif {
+  background: url(icons/picture.png) no-repeat left top;
+}
+.filetree LI.ext_tiff {
+  background: url(icons/picture.png) no-repeat left top;
+}
+.filetree LI.ext_txt {
+  background: url(icons/txt.png) no-repeat left top;
+}
+.filetree LI.ext_vb {
+  background: url(icons/code.png) no-repeat left top;
+}
+.filetree LI.ext_wav {
+  background: url(icons/music.png) no-repeat left top;
+}
+.filetree LI.ext_wmv {
+  background: url(icons/film.png) no-repeat left top;
+}
+.filetree LI.ext_xls {
+  background: url(icons/xls.png) no-repeat left top;
+}
+.filetree LI.ext_xml {
+  background: url(icons/code.png) no-repeat left top;
+}
+.filetree LI.ext_zip {
+  background: url(icons/zip.png) no-repeat left top;
+}
+.filetree UL {
+  border-left: 1px solid #d9dadb;
+  padding-left: 10px;
+}
+.filetree LI UL LI:before {
+  margin-left: -40px;
+  content: "\2014";
+  position: absolute;
+}
+.filetree LI UL LI {
+  position: relative;
+}

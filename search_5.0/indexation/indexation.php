@@ -172,9 +172,9 @@ function explode_pdf_file($path_file, $separator, $array_empty_words)
     $array_word = explode_text_file($separator, $array_empty_words, $word);
     $occurrences_word = array_count_values($array_word);
     $doc->title = $title_;
-    $doc->description = " ";
+    $doc->description = '';
     $doc->occurrences = $occurrences_word;
-    $doc->keywords = " ";
+    $doc->keywords = '';
     $doc->totale_occurrences = count(explode(' ',  $word));
 
     return $doc;

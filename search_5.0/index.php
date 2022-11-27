@@ -132,6 +132,7 @@
             $word = stripslashes($_REQUEST['words']);
             $mySearch =  get_join_data_value($conn, $word);
             $correct = reverse_word($word);
+            debug_to_console($correct);
             $word_correct =  get_data_correction($conn, $correct);
             empty($mySearch) ? display_word_correct($word_correct, $correct) : null;
             empty($mySearch) && empty($word_correct) ? display_invalid_word($word) : null;

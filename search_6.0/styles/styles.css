@@ -1,0 +1,232 @@
+* {
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+}
+body {
+  font-family: Helvetica;
+  -webkit-font-smoothing: antialiased;
+  background: #1c242d;
+}
+h2 {
+  text-align: center;
+  font-size: 20px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: white;
+  padding: 9px auto;
+}
+.box_ {
+  border-radius: 25px;
+  margin: 10px auto;
+}
+.box {
+  border: 1px solid #c4c4c4;
+  border-radius: 25px;
+  padding: 15px 10px 15px 10px;
+  font-size: large;
+  background: linear-gradient(rgba(65, 65, 219, 0.5), rgba(134, 228, 212, 0.5));
+  margin: 5px auto;
+  width: 600px;
+}
+.box-button {
+  border-radius: 25px;
+  background: #ffffff;
+  text-align: center;
+  cursor: pointer;
+  font-size: 17px;
+  width: 20%;
+  height: 30px;
+  color: rgb(10, 9, 9);
+}
+.pagination {
+  list-style-type: none;
+  display: flex;
+  padding: 0.8rem 0;
+  align-items: center;
+  justify-content: center;
+}
+.pagination li {
+  box-sizing: border-box;
+  padding-right: 10px;
+}
+.pagination li a {
+  box-sizing: border-box;
+  background-color: #e2e6e6;
+  padding: 8px;
+  text-decoration: none;
+  font-size: 12px;
+  font-weight: bold;
+  color: #616872;
+  border-radius: 25px;
+}
+.pagination li a:hover {
+  background-color: #d4dada;
+}
+.pagination .next a,
+.pagination .prev a {
+  text-transform: uppercase;
+  font-size: 12px;
+}
+.pagination .currentpage a {
+  background-color: #518acb;
+  color: #fff;
+}
+.pagination .currentpage a:hover {
+  background-color: #518acb;
+}
+.portfolioContent {
+  display: grid;
+  grid-template-columns: auto auto auto;
+}
+.portfolioContent .project {
+  background: #d8dbda;
+  border-radius: 25px;
+  margin: 1rem 0 0 0.6rem;
+  text-align: center;
+  width: 97%;
+  height: 350px;
+  padding: 1%;
+  box-shadow: 0 1px 3px #333;
+  align-items: center;
+  box-sizing: border-box;
+  display: grid;
+  grid-template-rows: 5% 20% 55% 25%;
+  grid-template-areas:
+    "A"
+    "B"
+    "C"
+    "D";
+}
+.project h3 {
+  grid-area: A;
+  display: flex;
+  justify-content: center;
+}
+.project h4 {
+  grid-area: B;
+  display: flex;
+  justify-content: center;
+}
+
+.project a {
+  grid-area: D;
+  align-items: center;
+}
+nav {
+  background: #a2a3a3;
+  height: 60px;
+  width: 100%;
+}
+
+.boxFrom {
+  padding: 30px 25px 10px 25px;
+  margin: 30px auto;
+  width: 360px;
+}
+
+h1.box-login {
+  border-radius: 25px;
+  width: 330px;
+  height: 110px;
+  line-height: 85px;
+  font-size: 35px;
+  color: #689ff1;
+  text-align: center;
+}
+.box-input {
+  font-size: 14px;
+  background: #fff;
+  border: 1px solid #ddd;
+  margin-bottom: 25px;
+  padding-left: 10px;
+  border-radius: 5px;
+  width: 347px;
+  height: 50px;
+}
+.button-submit {
+  background: url(http://4.bp.blogspot.com/-OcDQ6Z9ojlQ/VD1KnwJjFOI/AAAAAAAAAgs/cu_pKN6bpL8/s1600/magnifier.png)
+    no-repeat;
+  border-width: 0px;
+  cursor: pointer;
+  position: relative;
+  bottom: 4rem;
+  left: 100%;
+  width: 21px;
+  height: 22px;
+}
+.button-submit:hover {
+  background: url(http://2.bp.blogspot.com/-4-xFDFGKJrA/VD1Kn04f9TI/AAAAAAAAAgw/2ta84QY1x9A/s1600/magnifier-hover.png)
+    no-repeat;
+}
+.button-submit:active {
+  background: url(http://2.bp.blogspot.com/-4-xFDFGKJrA/VD1Kn04f9TI/AAAAAAAAAgw/2ta84QY1x9A/s1600/magnifier-hover.png)
+    no-repeat;
+  outline: none;
+}
+.button-submit::-moz-focus-inner {
+  border: 0;
+}
+.box-input:focus {
+  outline: none;
+  border-color: #5c7186;
+}
+
+table {
+  border-collapse: collapse;
+  background: #d6d8da;
+}
+
+td {
+  padding: 20px;
+  width: 100%;
+}
+p.errorMessage {
+  background-color: #e66262;
+  border: #aa4502 1px solid;
+  padding: 5px 10px;
+  color: #ffffff;
+  border-radius: 3px;
+}
+
+.typing-demo {
+  width: 25ch;
+  animation: typing 3s steps(22), blink 0.5s step-end infinite alternate;
+  white-space: nowrap;
+  overflow: hidden;
+  font-size: 2em;
+}
+
+.btn-circle.btn-lg {
+  width: 30px;
+  height: 30px;
+  text-align: center;
+  padding: 6px 0;
+  font-size: 18px;
+  line-height: 1.428571429;
+  border-radius: 15px;
+}
+
+.quote-wrapper {
+  display: inline-block;
+  border: 1px solid #cceeff;
+  border-radius: 50px;
+  text-align: center;
+  vertical-align: middle;
+  padding: 15px;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+}
+
+@keyframes typing {
+  from {
+    width: 0;
+  }
+}
+
+@keyframes blink {
+  50% {
+    border-color: transparent;
+  }
+}

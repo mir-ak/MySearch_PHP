@@ -1,10 +1,7 @@
 <?php
 
-//Liste de mots/poids
-//$mots['développement']=5;
-
 //Fonction pour générer le cloud à partir des données fournies
-function genererNuage($data = array(), $minFontSize = 16, $maxFontSize = 41)
+function genererNuage($data = array(), $minFontSize = 18, $maxFontSize = 41)
 {
     $tab_colors = initialiser_colors();
     $minimumCount = min(array_values($data));
@@ -16,11 +13,11 @@ function genererNuage($data = array(), $minFontSize = 16, $maxFontSize = 41)
     //Mélanger un tableau de manière aléatoire
     srand((float)microtime() * 1000);
 
-    $mots = array_keys($data);
+    //$size = count($data);
+    $mots = random_words($data, 20);
     shuffle($mots);
-
     foreach ($mots as $tag) {
-
+        debug_to_console($tag);
         $count = $data[$tag];
         //La couleur aléatoire
         $color = $tab_colors[$count];
@@ -56,10 +53,20 @@ function RandomCouleur()
     return $color;
 }
 
-
-
-
-
+function random_words($data, $rand)
+{
+    $word = [];
+    $count = 0;
+    foreach ($data  as $index => $value) {
+        if ($value > 1)
+            array_push($word, $index);
+        elseif ($value == 1 && $count < $rand) {
+            array_push($word, $index);
+            $count++;
+        }
+    }
+    return $word;
+}
 
 function search_with_genererNuage($conn, $id)
 {
