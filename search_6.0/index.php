@@ -57,13 +57,23 @@
         return implode('', $correct);
     }
 
+    function getPage()
+    {
+        if (!isset($_GET['page'])) {
+            $page = 1;
+        } else {
+            $page = $_GET['page'];
+        }
+        return $page;
+    }
+
     function get_join_data_value($conn, $word)
     {
         $insert_data = get_join_words_documents(
             "*",
             "join_documents_and_words",
             "INNER JOIN documents on join_documents_and_words.id_document = documents.id_document INNER JOIN words on join_documents_and_words.id_word = words.id_word",
-            "WHERE words.word LIKE \"$word%\" ORDER BY join_documents_and_words.weight DESC;"
+            "WHERE words.word LIKE \"$word\" ORDER BY join_documents_and_words.weight DESC;"
         );
 
         $rows = $conn->prepare($insert_data);
@@ -113,13 +123,57 @@
             <div style="font-size:18px; color:  #ffffff; width: 600px;">
                 Essayez avec l'orthographe
                 <?php foreach ($word_value as $value) { ?>
-                    <a href="MySearch?words=<?= $value ?>">
+                    <a style="color: #689ff8" href="MySearch?words=<?= $value ?>">
                         <?php echo $value ?>
-                    </a>&nbsp;
+                    </a> &nbsp;
                 <?php } ?>
             </div>
-    <?php
+        <?php
         }
+    }
+
+    function display_data($conn, $mySearch, $word)
+    {
+        foreach ($mySearch as $index => $value) { ?>
+            <div style="font-size:18px; color:  #1878C7; width: 600px;">
+                <strong><a href="<?= $value['path'] ?>" target="_blank"><?php echo $value['title']; ?></a>
+                    &nbsp;
+                    <button onclick="myFunction(<?= $index ?>)" type="button" value="<?= $index ?>" class="btn btn-labeled btn-info btn-circle btn-lg">
+                        <i style="position: relative; right: 0px; bottom:5px" class="fa fa-cloud"></i>
+                    </button>
+                </strong>
+                <p style="font-size:18px; color: #ffffff;"><?= $value['description'] ?></p>
+                <div class="quote-wrapper" id="myDIV-<?= $index ?>" style="display: none">
+                    <?php echo genererNuage(search_with_genererNuage($conn, $value["id_document"])) ?>
+                </div>
+            </div>
+        <?php }
+    }
+
+    // cette fonction elle permettre d'afficher les pages 
+    function DisplayPages($nb_page, $page, $word)
+    { ?>
+        <ul class="pagination">
+            <?php if ($page > 1) { ?>
+                <li class="prev">
+                    <a href="MySearch?words=<?= $word ?>&page=<?= $page - 1 ?>" class="page-link">Précédente</a>
+                </li>
+            <?php
+            }
+            for ($pages = 1; $pages <= $nb_page; $pages++) { ?>
+                <li class="page">
+                    <a href="MySearch?words=<?= $word ?>&page=<?= $pages ?>" class="page-link"><?= $pages ?></a>
+                </li>
+            <?php } ?>
+
+            <?php
+            if ($page < $nb_page) { ?>
+                <li class="next">
+                    <a href="MySearch?words=<?= $word ?>&page=<?= $page + 1 ?>" class="page-link">Suivante</a>
+                </li>
+            <?php }  ?>
+        </ul>
+    <?php
     }
 
     ?>
@@ -139,28 +193,28 @@
         <input class="button-submit" type="submit" value=" ">
 
         <?php
+
         if (isset($_GET['words'])) {
+            $Nb_Pas = 3;
+            $page = getPage();
+            $limit_nbpage = ($page - 1) * $Nb_Pas;
             $word = stripslashes($_REQUEST['words']);
             $mySearch =  get_join_data_value($conn, $word);
+
             $correct = reverse_word($word);
             $word_correct =  get_data_correction($conn, $correct);
             empty($mySearch) ? display_word_correct($word_correct, $correct) : null;
             empty($mySearch) && empty($word_correct) ? display_invalid_word($word) : null;
-            if (!empty($mySearch) && $word != '') foreach ($mySearch as $index => $value) { ?>
-                <div style="font-size:18px; color:  #1878C7; width: 600px;">
-                    <strong><a href="<?= $value['path'] ?>" target="_blank"><?php echo $value['title']; ?></a>
-                        &nbsp;
-                        <button onclick="myFunction(<?= $index ?>)" type="button" value="<?= $index ?>" class="btn btn-labeled btn-info btn-circle btn-lg">
-                            <i style="position: relative; right: 0px; bottom:5px" class="fa fa-cloud"></i>
-                        </button>
-                    </strong>
-                    <p style="font-size:18px; color: #ffffff;"><?= $value['description'] ?></p>
-                    <div class="quote-wrapper" id="myDIV-<?= $index ?>" style="display: none">
-                        <?php echo genererNuage(search_with_genererNuage($conn, $value["id_document"])) ?>
-                    </div>
-                </div>
-        <?php }
-        } ?>
+            if (!empty($mySearch) && $word != '') {
+                $nb_page = ceil(count($mySearch) / $Nb_Pas);
+                display_data($conn, array_slice($mySearch, $limit_nbpage, $Nb_Pas), $word);
+                if ($nb_page > 1)
+                    DisplayPages($nb_page, $page, $word);
+            }
+        }
+
+
+        ?>
 
     </form>
 
