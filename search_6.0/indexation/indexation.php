@@ -168,6 +168,7 @@ function explode_pdf_file($path_file, $array_empty_words)
     $new_string = str_replace("'", " ", $new_string);
     $new_string = str_replace("•", "", $new_string);
     $new_string = str_replace("◦", "", $new_string);
+    $new_string = str_replace("–", " ", $new_string);
     $new_string = str_replace("\u001", " f", $new_string);
 
     $array_words = explode(" ", $new_string);
