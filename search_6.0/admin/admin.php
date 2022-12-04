@@ -181,9 +181,10 @@ function dispalyDatabas($Myvariable)
   <div class="portfolioContent">
     <?php foreach ($Myvariable->rows as $index => $value) { ?>
       <div class="project">
-        <h4 style="margin-top: 30px; font-size: 2rem;"><a href="<?= $value['path'] ?>" target="_blank"> <?php echo $value['title']; ?></a></h4>
-        <h5 style="margin-top: 400px; font-size: 1.3rem;"><?php echo $value['description']; ?></h5>
-        <a style="color: red; font-size: 2.2rem;" href="admin.php?id_document=<?php echo $value['id_document']; ?>" class="fa fa-trash"></a>
+        <h3 style="margin-top: 80px; font-size: 1.5rem;"><a href="<?= $value['path'] ?>" target="_blank"> <?php echo $value['title']; ?></a></h3>
+        <h4 style="margin-top: 200px; font-size: 1.3rem;"><?php echo $value['description']; ?></h4>
+        <h4 style="margin-top: 420px; font-size: 1.3rem;"><?php echo 'mots totale : ' . $value['totale_words'] . ' ==> mots retenus : ' . number_format(($value['retained_words'] * 100) / $value['totale_words'], 2, '.', ',') . '%' ?></h4>
+        <a style="margin-top : 250px ; color: red; font-size: 2.2rem;" href="admin.php?id_document=<?php echo $value['id_document']; ?>" class="fa fa-trash"></a>
       </div>
     <?php } ?>
   </div>

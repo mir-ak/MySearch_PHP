@@ -40,7 +40,7 @@ class treeview
 			foreach ($this->files as $file) {
 				if (file_exists($this->folder . $file) && $file != '.' && $file != '..' && !is_dir($this->folder . $file)) {
 					$ext = preg_replace('/^.*\./', '', $file);
-					if ($ext === 'pdf' || $ext === 'txt' || $ext === 'html')
+					if ($ext === 'pdf' || $ext === 'txt' || $ext === 'html' || $ext === 'htm')
 						$list .= '<li class="file ext_' . $ext . '"><a href="#" rel="' . htmlentities($this->folder . $file) . '">' . htmlentities($file) . '</a></li>';
 				}
 			}

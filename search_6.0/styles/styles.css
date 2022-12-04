@@ -91,7 +91,7 @@ h2 {
   align-items: center;
   box-sizing: border-box;
   display: grid;
-  grid-template-rows: 5% 20% 55% 25%;
+  grid-template-rows: 5% 20% 65% 25%;
   grid-template-areas:
     "A"
     "B"
@@ -109,10 +109,12 @@ h2 {
   justify-content: center;
 }
 
-.project a {
-  grid-area: D;
-  align-items: center;
+.project h5 {
+  grid-area: C;
+  display: flex;
+  justify-content: center;
 }
+
 nav {
   background: #a2a3a3;
   height: 60px;

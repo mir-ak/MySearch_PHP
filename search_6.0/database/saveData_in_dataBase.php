@@ -101,15 +101,17 @@ function save_words_in_database($conn, $words)
     }
 }
 
-function save_documents_in_database($conn, $title, $path, $description, $words)
+function save_documents_in_database($conn, $title, $path, $description, $words, $totale_words, $retained_words)
 {
-    $description = $description == '' ? add_description($words) : $description;
-    $result = get_database($conn, "documents", '*', "title = \"$title\" AND path = \"$path\" AND description = \"$description\" limit 1");
+
+    $descriptions = $description == '' ? add_description($words) : $description;
+    $result = get_database($conn, "documents", '*', "title = \"$title\" AND path = \"$path\" AND description = \"$descriptions\" AND totale_words = \"$totale_words\" AND retained_words = \"$retained_words\" limit 1");
+    debug_to_console($result);
     if ($result->execute()) {
         $rows = $result->fetchAll();
         $database = get_item_database($rows, 'path');
         if (!in_array($path, $database)) {
-            $insert_data = set_insert_to_database("documents", "title, path, description", "(\"$title\",\"$path\",\"$description\")");
+            $insert_data = set_insert_to_database("documents", "title, path, description, totale_words, retained_words", "(\"$title\",\"$path\",\"$descriptions\",\"$totale_words\",\"$retained_words\")");
             $result1 = $conn->prepare($insert_data);
             if (!$result1->execute()) {
                 echo $insert_data;
@@ -145,12 +147,15 @@ function save_files_in_database($conn, $docs)
 {
     foreach ($docs as $index => $doc) {
         $words = $doc->word_and_weight;
+        debug_to_console($words);
         if (!empty($words)) {
             $title = $doc->title;
             $path = $doc->path;
             $description = $doc->description;
+            $totale_words = $doc->totale_words;
+            $retained_words = $doc->retained_words;
             $data_words = save_words_in_database($conn, array_keys($words));
-            $data_documents = save_documents_in_database($conn, $title, $path, $description, array_keys($words));
+            $data_documents = save_documents_in_database($conn, $title, $path, $description, array_keys($words), $totale_words, $retained_words);
             save_join_documents_and_words_in_database($conn, $data_words, $data_documents, $words);
         }
     }

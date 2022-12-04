@@ -19,6 +19,8 @@ CREATE TABLE documents (
   id_document INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
   title TEXT NULL,
   path TEXT NULL,
+  totale_words INT,
+  retained_words INT,
   description TEXT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 

@@ -43,7 +43,7 @@
 				mkdir('./FilesTxt');
 			}
 			foreach ($_FILES['files']['name'] as $i => $name) {
-				$iSok = array("txt" => "text/plain", "pdf" => "application/pdf", "html" => "text/html");
+				$iSok = array("txt" => "text/plain", "pdf" => "application/pdf", "html" => "text/html", "htm" => "text/html");
 				$extension = pathinfo($name, PATHINFO_EXTENSION);
 				if (!array_key_exists($extension, $iSok)) {
 					echo "<div style= 'margin-top:0.7rem; color:#A71113' align='center'> 
@@ -62,7 +62,7 @@
 					echo "<div style= 'margin-top:0.7rem; color:#A71113' align='center'> 
 							<strong>Ce fichier ", $name . " existe déjà !</strong> 	
 						</div>";
-					header("refresh: 5");
+					//header("refresh: 5");
 				} else {
 					move_uploaded_file($_FILES["files"]["tmp_name"][$i], "../Files/$dir/" . $name);
 					$conn =  configMysql();
