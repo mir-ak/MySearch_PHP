@@ -140,7 +140,6 @@ function explode_txt_file($text, $separator, $array_empty_words)
     $title_ = implode(' ', $title);
     $array_word = explode_text_file($separator, $array_empty_words, $text);
     $occurrences_word = array_count_values($array_word[0]);
-    debug_to_console($occurrences_word);
     $doc->title = $title_;
     $doc->description = '';
     $doc->occurrences = $occurrences_word;
@@ -172,7 +171,6 @@ function explode_pdf_file($path_file, $array_empty_words)
     $new_string = str_replace("\u001", " f", $new_string);
 
     $array_words = explode(" ", $new_string);
-    debug_to_console($array_words);
     $tab_words = [];
     foreach ($array_words as $key => $value) {
         if (strlen($value) >= 3 && !in_array($value, $array_empty_words)) {
@@ -180,7 +178,6 @@ function explode_pdf_file($path_file, $array_empty_words)
         }
     }
     $occurrences_word = array_count_values($tab_words);
-    debug_to_console($occurrences_word);
     $doc->title = $title_;
     $doc->description = '';
     $doc->occurrences = $occurrences_word;
