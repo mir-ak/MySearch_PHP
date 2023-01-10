@@ -106,7 +106,7 @@
 
     function display_invalid_word($word)
     { ?>
-        <div style="font-size:18px; color:  #ffffff; width: 600px;">
+        <div style="font-size:18px; color: #000000;; width: 600px;">
             Aucun document ne correspond aux termes de recherche spécifiés à <?php echo '( ' . $word . ' )' ?>
         </div>
 
@@ -115,14 +115,15 @@
 
     function display_word_correct($word_correct, $correct)
     {
+        
         $word_value = [];
         foreach ($word_correct as $index => $value) {
-            $word_value[] = $value[8];
+            $word_value[] = $value[10];
         }
         if (!empty($word_correct) && $correct != '') { ?>
-            <div style="font-size:18px; color:  #ffffff; width: 600px;">
+            <div style="font-size:18px; color: #000000;; width: 600px;">
                 Essayez avec l'orthographe
-                <?php foreach ($word_value as $value) { ?>
+                <?php foreach (array_unique($word_value) as $value) { ?>
                     <a style="color: #689ff8" href="MySearch?words=<?= $value ?>">
                         <?php echo $value ?>
                     </a> &nbsp;
@@ -132,17 +133,18 @@
         }
     }
 
-    function display_data($conn, $mySearch, $word)
+    function display_data($conn, $mySearch, $nb_values)
     {
+        echo "<div>" . $nb_values . " résultats trouvés  </div> </br>";
         foreach ($mySearch as $index => $value) { ?>
             <div style="font-size:18px; color:  #1878C7; width: 600px;">
-                <strong><a href="<?= $value['path'] ?>" target="_blank"><?php echo $value['title']; ?></a>
+                <strong><a href="<?= $value['path'] ?>" target="_blank"><?php echo $value['title']; ?></a> (<?= $value['weight'] ?>)
                     &nbsp;
                     <button onclick="myFunction(<?= $index ?>)" type="button" value="<?= $index ?>" class="btn btn-labeled btn-info btn-circle btn-lg">
                         <i style="position: relative; right: 0px; bottom:5px" class="fa fa-cloud"></i>
                     </button>
                 </strong>
-                <p style="font-size:18px; color: #ffffff;"><?= $value['description'] ?></p>
+                <p style="font-size:18px; color: #000000;"><?= $value['description'] ?></p>
                 <div class="quote-wrapper" id="myDIV-<?= $index ?>" style="display: none">
                     <?php echo genererNuage(search_with_genererNuage($conn, $value["id_document"])) ?>
                 </div>
@@ -200,14 +202,15 @@
             $limit_nbpage = ($page - 1) * $Nb_Pas;
             $word = stripslashes($_REQUEST['words']);
             $mySearch =  get_join_data_value($conn, $word);
-
+            
             $correct = reverse_word($word);
             $word_correct =  get_data_correction($conn, $correct);
             empty($mySearch) ? display_word_correct($word_correct, $correct) : null;
             empty($mySearch) && empty($word_correct) ? display_invalid_word($word) : null;
             if (!empty($mySearch) && $word != '') {
+                $nb_values = count($mySearch);
                 $nb_page = ceil(count($mySearch) / $Nb_Pas);
-                display_data($conn, array_slice($mySearch, $limit_nbpage, $Nb_Pas), $word);
+                display_data($conn, array_slice($mySearch, $limit_nbpage, $Nb_Pas), $nb_values);
                 if ($nb_page > 1)
                     DisplayPages($nb_page, $page, $word);
             }

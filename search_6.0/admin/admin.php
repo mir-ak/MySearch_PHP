@@ -83,7 +83,7 @@ if (!isset($_SESSION["username"])) {
   </script>
 </head>
 
-<body>
+<body style=" background: #1c242d;">
   <nav class="navbar navbar-expand-lg navbar-light">
     &nbsp;
     <a class="w3-xxxlarge" href="../index.php"> <i class="fa fa-home"></i> </a>
