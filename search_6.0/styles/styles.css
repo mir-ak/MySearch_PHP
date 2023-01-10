@@ -6,7 +6,7 @@
 body {
   font-family: Helvetica;
   -webkit-font-smoothing: antialiased;
-  background: #1c242d;
+  background: #ffffff;
 }
 h2 {
   text-align: center;
@@ -132,7 +132,7 @@ h1.box-login {
   width: 330px;
   height: 110px;
   line-height: 85px;
-  font-size: 35px;
+  font-size: 40px;
   color: #689ff1;
   text-align: center;
 }
@@ -211,11 +211,11 @@ p.errorMessage {
 
 .quote-wrapper {
   display: inline-block;
-  border: 1px solid #cceeff;
+  border: 0.5px solid #2978a3;
   border-radius: 50px;
   text-align: center;
   vertical-align: middle;
-  padding: 15px;
+  padding: 20px;
   height: 100%;
   width: 100%;
   overflow: hidden;
