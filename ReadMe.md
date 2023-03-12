@@ -81,7 +81,7 @@ Démonstration table join Words and Documents :
 
 > https://user-images.githubusercontent.com/58698019/204140506-d4ac9acf-960b-4de8-9388-6f756a458e1c.mp4
 
-# Version 6.1 Final ajouter les remarques de prof :
+# Version 6.1 Final :
 
 - Changer la couleur de fond de la page de recherche.
 
